@@ -2,19 +2,20 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <Test formName="register"/>
+    <Footer/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Test from './components/Test'
+import HelloWorld from './components/HelloWorld.vue';
+import Footer from './components/layout/footer';
+
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
-    Test
+    Footer
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="test">
+    <div>
         <h2> {{ formName }} </h2>
         <form>
             <p>
@@ -14,38 +14,49 @@
             <label for="age"> Age </label>
             <input v-model="age" id="age">
             </p>
+            <p>
+            <label for="firstname"> Firstname </label>
+            <input v-model="firstname" id="firstname">
+            </p>
+            <p>
+            <label for="lastname"> Lastname </label>
+            <input v-model="lastname" id="lastname">
+            </p>
         </form>
         <section>
             <h4>You entered: </h4>
             <p> Username: {{username}} </p>
             <p> Password: {{password}} </p>
             <p> Age: {{age}} </p>
+            <p> {{getFullName()}}  </p>
+            <p> {{msg()}} </p>
         </section>
+    </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Test',
+    name: "Register",
     data: function() {
         return {
             username: "",
             password: "",
-            age: "" 
+            age: "", 
+            firstname: "",
+            lastname: ""
         };
+    },
+    methods: {
+        getFullName: function() {
+            return this.firstname + " " + this.lastname;
+        },
+        msg: function() {
+            return `${this.username}, ${this.password}`;
+        },
     },
     props: {
         formName: String
     }
 }
 </script>
-
-<style scoped>
-    form {
-        border: 1px solid black
-    }
-
-    form > #id {
-        border-radius: 5px;
-    }
-</style>
