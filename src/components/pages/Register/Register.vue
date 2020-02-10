@@ -32,7 +32,6 @@
             <p> {{msg()}} </p>
         </section>
     </div>
-    </div>
 </template>
 
 <script>
@@ -52,7 +51,7 @@ export default {
             return this.firstname + " " + this.lastname;
         },
         msg: function() {
-            return `${this.username}, ${this.password}`;
+            return `${this.username} ${this.password}`;
         },
     },
     props: {
