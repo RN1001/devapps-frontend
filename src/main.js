@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import Index from './components/Index.vue';
 import Register from './components/pages/register/Register.vue';
+import Portal from "./components/pages/portal/Portal";
 
 
 Vue.use(VueRouter);
@@ -16,7 +17,14 @@ const router = new VueRouter({
     },
     {
       path: "/register",
-      component: Register
+      component: Register,
+      props: {
+        formName: "Register"
+      }
+    },
+    {
+      path: "/portal",
+      component: Portal
     }
   ]
 });
