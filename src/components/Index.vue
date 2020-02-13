@@ -1,11 +1,19 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <ul>
+    <!--
+      <ul>
      <li v-for="(children, index) in user['user']['children']" :key="index">
       <p>{{index}}: {{children.name}}</p>
      </li>
+    </ul>-->
+      <p> {{apiMsg['data']}} </p>
+    <ul>
+      <li v-for="(data, index) in user[0]" :key="index">
+        <p> {{data}} </p>
+      </li>
     </ul>
+
   </div>
 </template>
 
@@ -14,21 +22,30 @@ export default {
   name: 'HelloWorld',
   data: function() {
     return {
-      user: this.getData()
+        user: this.getData(),
+        apiMsg: this.getMsg()
     }
   },
   props: {
     msg: String
   },
   methods: {
-    getData: function() {
-      fetch('http://localhost:3000/api/user')
-      .then((res) => {
-        return res.json();
-      }).then((json) => {
-        this.user = json;
-      })
-    },
+      getData: function() {
+         fetch('http://localhost:3000/applications')
+         .then((res) => {
+           return res.json();
+         }).then((json) => {
+           this.user = json;
+         })
+      },
+      getMsg: function() {
+        fetch('http://localhost:3000/')
+        .then((res) => {
+            return res.json();
+        }).then((json) => {
+            this.apiMsg = json;
+        });
+      }
   }
 }
 
