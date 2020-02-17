@@ -13,7 +13,10 @@ const router = new VueRouter({
   routes: [
     {
       path: "*",
-      component: Index
+      component: Index,
+      props: {
+        msg: "Hello"
+      }
     },
     {
       path: "/register",
