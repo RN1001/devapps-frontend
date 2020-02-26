@@ -8,6 +8,9 @@
                 <router-link class="nav-item" to="/portal"> Portal </router-link>
             </li>
             <li class="nav-link">
+                <router-link class="nav-item" to="/login"> Login </router-link>
+            </li>
+            <li class="nav-link">
                 <router-link class="nav-item" to="/register"> Register </router-link>
             </li>
         </ul>
