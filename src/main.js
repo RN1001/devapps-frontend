@@ -15,6 +15,7 @@ const router = new VueRouter({
   routes: [
     {
       path: "*",
+      name: "home",
       component: Index,
       props: {
         msg: "Hello"
@@ -22,6 +23,7 @@ const router = new VueRouter({
     },
     {
       path: "/portal",
+      name: "portal",
       component: Portal,
       beforeEnter: (to, from, next) => {
         if (isLoggedIn) {
@@ -57,6 +59,9 @@ const router = new VueRouter({
         }
       }
     },
+    {
+      path: "/logout",
+    }
   ]
 });
 
