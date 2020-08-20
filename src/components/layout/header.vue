@@ -10,17 +10,14 @@
             <li v-if="userLoggedIn() === false" class="nav-link">
                 <router-link class="nav-item" to="/login"> Login </router-link>
             </li>
-            <li v-else>
-            </li>
             <li v-if="userLoggedIn() === false" class="nav-link">
                 <router-link class="nav-item" to="/register"> Register </router-link>
-            </li>
-            <li v-else>
             </li>
             <li v-if="username() !== null" class="nav-link">
                 <router-link class="nav-item" to="/"> {{username()}}'s Account </router-link>
             </li>
-            <li v-else>
+            <li v-if="username() !== null" class="nav-link">
+                <router-link class="nav-item" to="/admin"> Admin </router-link>
             </li>
             <li v-if="userLoggedIn() === true">
                 <a href="#" class="nav-link" v-on:click="logout"> Logout </a>
